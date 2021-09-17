@@ -3,16 +3,16 @@ class ApplicationController < Sinatra::Base
 
   # Add your routes here
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    { message: "Star Wars Episode I The Phantom Menace" }.to_json
   end
 
-  get "/shrimp/add/:number1/:number2" do 
-    { result: params[:number1].to_i + params[:number2].to_i }.to_json
+  get "/users" do
+    User.all.to_json
   end
 
-  get "/shrimp/:species" do
-    Shrmip.find_by_species(params[:species])
-    { species: "#{params[:species]} Shrimp" }.to_json
+  get "/games" do
+  Game.all.to_json
+  
   end
 
 end
